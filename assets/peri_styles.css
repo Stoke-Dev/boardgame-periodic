@@ -1,0 +1,693 @@
+html, body {
+  height: 100%;
+}
+html {
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+html * {
+  box-sizing: border-box;
+}
+
+.col-xs-1 {
+  width: 5.555556%;
+  height: 60px;
+  float: left;
+  padding: 7px 0px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  overflow: hidden;
+  font-size: 11px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+
+.col-xs-1.off {
+  border-color: transparent;
+  cursor: default;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.row {
+  clear: both;
+  overflow: hidden;
+}
+
+.bg_popup_container{
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.4);
+}
+
+.bg_popup {
+  display: block;
+  position: relative;
+  margin: auto;
+  top: 0%;
+  margin-top: -200px;
+}
+
+
+#card {
+  position: relative;
+  background: #ccc;
+  padding: 10px 20px 20px 20px;
+  border: 10px solid #666;
+  border-radius: 40px;
+  max-width: 950px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#card > * {
+  z-index: 2;
+  position: relative;
+}
+
+#card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 10px solid #aaa;
+  border-radius: 30px;
+}
+
+#card #title{
+  color:white;
+  text-transform: uppercase;
+  font-size: 70px;
+  font-weight: 500;
+  margin: 20px 20px;
+  max-width: 78%;
+}
+
+#card .icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 30px 30px 50px 30px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  text-align: center;
+}
+
+#card .icon .svg_container {
+  background: white;
+  border-radius: 20px;
+  width: 120px;
+  height: 60px;
+  text-align: center;
+  padding: 8px;
+  margin-top: 9px;
+}
+
+#card .icon .svg_container svg {
+  display: none;
+  height: 100%;
+}
+
+#card.Word .icon .svg_container svg#icon_word {
+  display: inline-block;
+}
+#card.Dexterity .icon .svg_container svg#icon_dexterity {
+  display: inline-block;
+}
+#card.Economic .icon .svg_container svg#icon_economic {
+  display: inline-block;
+}
+#card.Abstract .icon .svg_container svg#icon_abstract {
+  display: inline-block;
+}
+#card.Party .icon .svg_container svg#icon_party {
+  display: inline-block;
+}
+#card.Building .icon .svg_container svg#icon_building {
+  display: inline-block;
+}
+#card.Cooperative .icon .svg_container svg#icon_cooperative {
+  display: inline-block;
+}
+#card.Adventure .icon .svg_container svg#icon_adventure {
+  display: inline-block;
+}
+#card.Tile .icon .svg_container svg#icon_tile {
+  display: inline-block;
+}
+#card.Battle .icon .svg_container svg#icon_battle {
+  display: inline-block;
+}
+#card.Deduction .icon .svg_container svg#icon_deduction {
+  display: inline-block;
+}
+#card.Racing .icon .svg_container svg#icon_racing {
+  display: inline-block;
+}
+#card.Card .icon .svg_container svg#icon_card {
+  display: inline-block;
+}
+#card.Dice .icon .svg_container svg#icon_dice {
+  display: inline-block;
+}
+
+#card .icon .caption {
+  font-size: 13px;
+  color: black;
+  text-transform: uppercase;
+}
+
+#card .content {
+  background: white;
+  border-radius: 0 0 13px 13px;
+  padding: 10px;
+}
+
+#card .content .main {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  text-align: left;
+}
+#card .content .main #featured_image {
+  display: inline-block;
+  width: 49%;
+  padding-right: 20px;
+}
+
+#card .content .main #featured_image img{
+  width: 100%;
+  border-radius: 0 10px 10px 10px;
+}
+
+#card .content .main .description_container {
+  display: block;
+  float: right;
+  position: relative;
+  width: 50%;
+}
+
+#card .content .main #description {
+  font-family: "Georgia","Times", serif;
+  font-size: 16px;
+  width: 100%;
+  text-align: left;
+}
+
+#card .content .main #description span {
+  font-family: "Montserrat";
+  font-size: 44px;
+  font-weight: 500;
+  display: block;
+  float: left;
+  margin-top: -8px;
+  color: #333;
+  height:30px;
+  padding-right: 3px;
+}
+
+#card .content .details {
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#card .content .details header{
+  overflow: hidden;
+}
+
+#card .content .details .left{
+  background: #ccc;
+  border-radius: 99px;
+  padding: 5px;
+  float: left;
+  width: 70%;
+  font-size: 17px;
+}
+
+#card .content .details .left div{
+  display: inline-block;
+  width: 32%;
+  padding: 0 50px;
+}
+
+#card .content .details .left .time{
+  text-align: left;
+}
+
+#card .content .details .left .player{
+  text-align: center;
+}
+
+#card .content .details .left .ages{
+  text-align: right;
+}
+
+#card .content .details .right{
+  background: #ccc;
+  border-radius: 99px;
+  text-align: center;
+  float: right;
+  padding: 5px;
+  width: 23%;
+  font-size: 17px;
+}
+
+#card .content .details #data_fields {
+  width: 100%;
+  margin: 30px;
+}
+
+#card .content .details #data_fields div{
+  display: inline-block;
+  width: 21%;
+  font-size: 86px;
+  color: #ccc;
+  line-height: 62px;
+}
+
+#card .content .details #data_fields #play_time {
+  text-align: left;
+}
+
+#card .content .details #data_fields #play_time span{
+  font-size: 25px;
+  text-transform: lowercase;
+  display: block;
+  line-height: 25px;
+  position: absolute;
+}
+
+#card .content .details #data_fields #players {
+  text-align: center;
+}
+
+#card .content .details #data_fields #ages {
+  text-align: right;
+}
+
+#card .content .details #data_fields #affiliate {
+  margin-left: 60px;
+  width: 25%;
+  text-align: left;
+  line-height: 10px;
+}
+
+
+/*********************
+***** CARD COLORS ****
+*********************/
+
+/*Word: One 540436, Two 930965, Three bc3181*/
+#card.Word {
+  border-color: #540436; /* One */
+  background-color: #bc3181; /* Three */
+}
+#card.Word:after {
+  border-color: #930965; /* Two */
+}
+#card.Word .content .main #description span {
+  color: #bc3181; /* Three */
+}
+#card.Word .content .details .right {
+  background: #bc3181; /* Three */
+}
+#card.Word .content .details .left {
+  background: #bc3181; /* Three */
+}
+#card.Word .content .details #data_fields div{
+  color: #bc3181; /* Three */
+}
+#card.Word .icon svg .cls-1{
+  fill: #930965; /* Two */
+}
+.col-xs-1.Word {
+  background: #930965; /* Two */
+  border: 2px solid #540436; /* One */
+}
+/*Dexterity: One 00515e, Two 007e93, Three 00a1bc*/
+#card.Dexterity {
+  border-color: #00515e; /* One */
+  background-color: #00a1bc; /* Three */
+}
+#card.Dexterity:after {
+  border-color: #007e93; /* Two */
+}
+#card.Dexterity .content .main #description span {
+  color: #00a1bc; /* Three */
+}
+#card.Dexterity .content .details .right {
+  background: #00a1bc; /* Three */
+}
+#card.Dexterity .content .details .left {
+  background: #00a1bc; /* Three */
+}
+#card.Dexterity .content .details #data_fields div{
+  color: #00a1bc; /* Three */
+}
+#card.Dexterity .icon svg .cls-1{
+  fill: #007e93; /* Two */
+}
+.col-xs-1.Dexterity {
+  background: #007e93; /* Two */
+  border: 2px solid #00515e; /* One */
+}
+/*Economic: One 006630, Two 009e5a, Three 00d293*/
+#card.Economic {
+  border-color: #006630; /* One */
+  background-color: #00d293; /* Three */
+}
+#card.Economic:after {
+  border-color: #009e5a; /* Two */
+}
+#card.Economic .content .main #description span {
+  color: #00d293; /* Three */
+}
+#card.Economic .content .details .right {
+  background: #00d293; /* Three */
+}
+#card.Economic .content .details .left {
+  background: #00d293; /* Three */
+}
+#card.Economic .content .details #data_fields div{
+  color: #00d293; /* Three */
+}
+#card.Economic .icon svg .cls-1{
+  fill: #009e5a; /* Two */
+}
+.col-xs-1.Economic {
+  background: #009e5a; /* Two */
+  border: 2px solid #006630; /* One */
+}
+/*Abstract: One bf9740, Two e0ba4f, Three f9e252*/
+#card.Abstract {
+  border-color: #bf9740; /* One */
+  background-color: #f9e252; /* Three */
+}
+#card.Abstract:after {
+  border-color: #e0ba4f; /* Two */
+}
+#card.Abstract .content .main #description span {
+  color: #f9e252; /* Three */
+}
+#card.Abstract .content .details .right {
+  background: #f9e252; /* Three */
+}
+#card.Abstract .content .details .left {
+  background: #f9e252; /* Three */
+}
+#card.Abstract .content .details #data_fields div{
+  color: #f9e252; /* Three */
+}
+#card.Abstract .icon svg .cls-1{
+  fill: #e0ba4f; /* Two */
+}
+.col-xs-1.Abstract {
+  background: #e0ba4f; /* Two */
+  border: 2px solid #bf9740; /* One */
+}
+/*Party: One bf5f17, Two e57f39, Three ff9f50*/
+#card.Party {
+  border-color: #bf5f17; /* One */
+  background-color: #ff9f50; /* Three */
+}
+#card.Party:after {
+  border-color: #e57f39; /* Two */
+}
+#card.Party .content .main #description span {
+  color: #ff9f50; /* Three */
+}
+#card.Party .content .details .right {
+  background: #ff9f50; /* Three */
+}
+#card.Party .content .details .left {
+  background: #ff9f50; /* Three */
+}
+#card.Party .content .details #data_fields div{
+  color: #ff9f50; /* Three */
+}
+#card.Party .icon svg .cls-1{
+  fill: #e57f39; /* Two */
+}
+.col-xs-1.Party {
+  background: #e57f39; /* Two */
+  border: 2px solid #bf5f17; /* One */
+}
+/*Building: One a0180e, Two d62618, Three fc4032*/
+#card.Building {
+  border-color: #a0180e; /* One */
+  background-color: #fc4032; /* Three */
+}
+#card.Building:after {
+  border-color: #d62618; /* Two */
+}
+#card.Building .content .main #description span {
+  color: #fc4032; /* Three */
+}
+#card.Building .content .details .right {
+  background: #fc4032; /* Three */
+}
+#card.Building .content .details .left {
+  background: #fc4032; /* Three */
+}
+#card.Building .content .details #data_fields div{
+  color: #fc4032; /* Three */
+}
+#card.Building .icon svg .cls-1{
+  fill: #d62618; /* Two */
+}
+.col-xs-1.Building {
+  background: #d62618; /* Two */
+  border: 2px solid #a0180e; /* One */
+}
+/*Cooperative: One 00a098, Two 00ccc2, Three 00eae9*/
+#card.Cooperative {
+  border-color: #00a098; /* One */
+  background-color: #00eae9; /* Three */
+}
+#card.Cooperative:after {
+  border-color: #00ccc2; /* Two */
+}
+#card.Cooperative .content .main #description span {
+  color: #00eae9; /* Three */
+}
+#card.Cooperative .content .details .right {
+  background: #00eae9; /* Three */
+}
+#card.Cooperative .content .details .left {
+  background: #00eae9; /* Three */
+}
+#card.Cooperative .content .details #data_fields div{
+  color: #00eae9; /* Three */
+}
+#card.Cooperative .icon svg .cls-1{
+  fill: #00ccc2; /* Two */
+}
+.col-xs-1.Cooperative {
+  background: #00ccc2; /* Two */
+  border: 2px solid #00a098; /* One */
+}
+/*Adventure: One 30890b, Two 5fc11f, Three 5be828*/
+#card.Adventure {
+  border-color: #30890b; /* One */
+  background-color: #5be828; /* Three */
+}
+#card.Adventure:after {
+  border-color: #5fc11f; /* Two */
+}
+#card.Adventure .content .main #description span {
+  color: #5be828; /* Three */
+}
+#card.Adventure .content .details .right {
+  background: #5be828; /* Three */
+}
+#card.Adventure .content .details .left {
+  background: #5be828; /* Three */
+}
+#card.Adventure .content .details #data_fields div{
+  color: #5be828; /* Three */
+}
+#card.Adventure .icon svg .cls-1{
+  fill: #5fc11f; /* Two */
+}
+.col-xs-1.Adventure {
+  background: #5fc11f; /* Two */
+  border: 2px solid #30890b; /* One */
+}
+/*Tile: One ad4966, Two ce6180, Three e585a5*/
+#card.Tile {
+  border-color: #ad4966; /* One */
+  background-color: #e585a5; /* Three */
+}
+#card.Tile:after {
+  border-color: #ce6180; /* Two */
+}
+#card.Tile .content .main #description span {
+  color: #e585a5; /* Three */
+}
+#card.Tile .content .details .right {
+  background: #e585a5; /* Three */
+}
+#card.Tile .content .details .left {
+  background: #e585a5; /* Three */
+}
+#card.Tile .content .details #data_fields div{
+  color: #e585a5; /* Three */
+}
+#card.Tile .icon svg .cls-1{
+  fill: #ce6180; /* Two */
+}
+.col-xs-1.Tile {
+  background: #ce6180; /* Two */
+  border: 2px solid #ad4966; /* One */
+}
+/*Battle: One 2b247f, Two 5f4fb9, Three 8d77f2*/
+#card.Battle {
+  border-color: #2b247f; /* One */
+  background-color: #8d77f2; /* Three */
+}
+#card.Battle:after {
+  border-color: #5f4fb9; /* Two */
+}
+#card.Battle .content .main #description span {
+  color: #8d77f2; /* Three */
+}
+#card.Battle .content .details .right {
+  background: #8d77f2; /* Three */
+}
+#card.Battle .content .details .left {
+  background: #8d77f2; /* Three */
+}
+#card.Battle .content .details #data_fields div{
+  color: #8d77f2; /* Three */
+}
+#card.Battle .icon svg .cls-1{
+  fill: #5f4fb9; /* Two */
+}
+.col-xs-1.Battle {
+  background: #5f4fb9; /* Two */
+  border: 2px solid #2b247f; /* One */
+}
+/*Deduction: One 889b00, Two afc100, Three d3e900*/
+#card.Deduction {
+  border-color: #889b00; /* One */
+  background-color: #d3e900; /* Three */
+}
+#card.Deduction:after {
+  border-color: #afc100; /* Two */
+}
+#card.Deduction .content .main #description span {
+  color: #d3e900; /* Three */
+}
+#card.Deduction .content .details .right {
+  background: #d3e900; /* Three */
+}
+#card.Deduction .content .details .left {
+  background: #d3e900; /* Three */
+}
+#card.Deduction .content .details #data_fields div{
+  color: #d3e900; /* Three */
+}
+#card.Deduction .icon svg .cls-1{
+  fill: #afc100; /* Two */
+}
+.col-xs-1.Deduction {
+  background: #afc100; /* Two */
+  border: 2px solid #889b00; /* One */
+}
+/*Racing: One b27b00, Two e29c00, Three ffc200*/
+#card.Racing {
+  border-color: #b27b00; /* One */
+  background-color: #ffc200; /* Three */
+}
+#card.Racing:after {
+  border-color: #e29c00; /* Two */
+}
+#card.Racing .content .main #description span {
+  color: #ffc200; /* Three */
+}
+#card.Racing .content .details .right {
+  background: #ffc200; /* Three */
+}
+#card.Racing .content .details .left {
+  background: #ffc200; /* Three */
+}
+#card.Racing .content .details #data_fields div{
+  color: #ffc200; /* Three */
+}
+#card.Racing .icon svg .cls-1{
+  fill: #e29c00; /* Two */
+}
+.col-xs-1.Racing {
+  background: #e29c00; /* Two */
+  border: 2px solid #b27b00; /* One */
+}
+/*Card: One bf2821, Two dd3b33, Three f05448*/
+#card.Card {
+  border-color: #bf2821; /* One */
+  background-color: #f05448; /* Three */
+}
+#card.Card:after {
+  border-color: #dd3b33; /* Two */
+}
+#card.Card .content .main #description span {
+  color: #f05448; /* Three */
+}
+#card.Card .content .details .right {
+  background: #f05448; /* Three */
+}
+#card.Card .content .details .left {
+  background: #f05448; /* Three */
+}
+#card.Card .content .details #data_fields div{
+  color: #f05448; /* Three */
+}
+#card.Card .icon svg .cls-1{
+  fill: #dd3b33; /* Two */
+}
+.col-xs-1.Card {
+  background: #dd3b33; /* Two */
+  border: 2px solid #bf2821; /* One */
+}
+/*Dice: One 265996, Two 2979ed, Three 4599f4*/
+#card.Dice {
+  border-color: #265996; /* One */
+  background-color: #4599f4; /* Three */
+}
+#card.Dice:after {
+  border-color: #2979ed; /* Two */
+}
+#card.Dice .content .main #description span {
+  color: #4599f4; /* Three */
+}
+#card.Dice .content .details .right {
+  background: #4599f4; /* Three */
+}
+#card.Dice .content .details .left {
+  background: #4599f4; /* Three */
+}
+#card.Dice .content .details #data_fields div{
+  color: #4599f4; /* Three */
+}
+#card.Dice .icon svg .cls-1{
+  fill: #2979ed; /* Two */
+}
+.col-xs-1.Dice {
+  background: #2979ed; /* Two */
+  border: 2px solid #265996; /* One */
+}
