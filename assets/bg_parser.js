@@ -2,7 +2,7 @@ var db = {};
 (function($){
 $("document").ready(function(){
     // $("body").append('<link rel="stylesheet" type="text/css" href="assets/peri_styles.css">');
-    $(".bg_popup_container").hide();
+    // $(".bg_popup_container").hide();
 
     var dataURL = $("#CSV_LINK").html();
     $("#CSV_LINK").remove();
@@ -18,7 +18,6 @@ $("document").ready(function(){
                     openPanel(val.Spot);
                 });
             });
-
             console.log("Finished");
         }
     });
@@ -29,6 +28,7 @@ $("document").ready(function(){
 var openPanel = function(id) {
 
     $(".bg_popup_container").show();
+
     //$("body").append('<div class="bg_popup_container"><div class="bg_popup">' + getData(id) + '</div></div>');
 
     console.log(db[id]);
@@ -44,12 +44,30 @@ var openPanel = function(id) {
     $("#affiliate").html("<a style='font-size: 34%;' target='_blank' href='"+((db[id].Review_Link != '')?db[id].Review_Link:"#")+"'>[Review Link]</a>");
     $("#featured_image img").attr("src", "assets/img/"+db[id].Img_name);
 
-    $(".bg_popup_container").click(function(){
-        $("#featured_image img").attr("src", "assets/img/placeholder.png");
-        $("#card").removeClass(category);
-        $(this).hide();
-    });
-}
+    setTimeout(function(){
+        $(".bg_popup_container").addClass("ready");
+
+        $(".bg_popup_container").click(function(){
+            $(".bg_popup_container").removeClass('open');
+            $(this).off("click");
+
+            setTimeout(function(){ 
+                $("#featured_image img").attr("src", "assets/img/placeholder.png");
+                $("#card").removeClass(category);
+                $(".bg_popup_container").hide(); 
+                $(".bg_popup_container").removeClass("ready");
+            }, 500);
+
+        });
+
+    }, 500);
+
+    
+
+    setTimeout(function(){ 
+        $(".bg_popup_container").addClass('open'); 
+    }, 0);
+}   
 
 })(jQuery);
 
