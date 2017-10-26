@@ -18,9 +18,31 @@ $("document").ready(function(){
                     openPanel(val.Spot);
                 });
             });
+
+            var category_list = [];
+
+            $.each(db, function(key, val){
+                category_list.push(val.Category);
+            });
+
+            category_list = $.uniqueSort(category_list)
+            $("#cat_list").html("")
+
+            $.each(category_list, function(key, val){
+                $("#cat_list").append(val + "<br>");
+            });
+
+            
+
+
+
             console.log("Finished");
         }
     });
+
+
+    
+    
 });
 
 
