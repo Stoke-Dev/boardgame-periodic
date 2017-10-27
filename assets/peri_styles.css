@@ -9,6 +9,11 @@ html * {
   box-sizing: border-box;
 }
 
+
+body {
+  margin: 0;
+}
+
 .col-xs-1 {
   width: 5.555556%;
   height: 60px;
@@ -26,6 +31,10 @@ html * {
 .col-xs-1.off {
   border-color: transparent;
   cursor: default;
+}
+
+.col-xs-1.cat-highlight {
+  color:black;
 }
 
 .container {
@@ -100,8 +109,16 @@ html * {
   border-radius: 30px;
 }
 
+#card #close {
+  display: block;
+  position: absolute;
+  right: -30px;
+  color: white;
+  cursor: pointer;
+}
+
 #card #title{
-  color:white;
+  color: white;
   text-transform: uppercase;
   font-size: 70px;
   font-weight: 500;
@@ -322,6 +339,28 @@ html * {
 }
 
 
+
+#cat_container {
+  display: block;
+  width: 800px;
+  margin: auto;
+}
+
+#cat_list .category-list-item {
+  cursor: default;
+  display: inline-block;
+}
+
+#cat_list .category-list-item:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 5px 0 15px;
+  background: #efefef;
+}
+
+
 /*********************
 ***** CARD COLORS ****
 *********************/
@@ -353,6 +392,10 @@ html * {
   background: #930965; /* Two */
   border: 2px solid #540436; /* One */
 }
+#cat_list #Word.category-list-item:before {
+  background: #930965; /* Two */
+  border: 1px solid #540436; /* One */
+}
 /*Dexterity: One 00515e, Two 007e93, Three 00a1bc*/
 #card.Dexterity {
   border-color: #00515e; /* One */
@@ -379,6 +422,10 @@ html * {
 .col-xs-1.Dexterity {
   background: #007e93; /* Two */
   border: 2px solid #00515e; /* One */
+}
+#cat_list #Dexterity.category-list-item:before {
+  background: #007e93; /* Two */
+  border: 1px solid #00515e; /* One */
 }
 /*Economic: One 006630, Two 009e5a, Three 00d293*/
 #card.Economic {
@@ -407,6 +454,10 @@ html * {
   background: #009e5a; /* Two */
   border: 2px solid #006630; /* One */
 }
+#cat_list #Economic.category-list-item:before {
+  background: #009e5a; /* Two */
+  border: 1px solid #006630; /* One */
+}
 /*Abstract: One bf9740, Two e0ba4f, Three f9e252*/
 #card.Abstract {
   border-color: #bf9740; /* One */
@@ -433,6 +484,10 @@ html * {
 .col-xs-1.Abstract {
   background: #e0ba4f; /* Two */
   border: 2px solid #bf9740; /* One */
+}
+#cat_list #Abstract.category-list-item:before {
+  background: #e0ba4f; /* Two */
+  border: 1px solid #bf9740; /* One */
 }
 /*Party: One bf5f17, Two e57f39, Three ff9f50*/
 #card.Party {
@@ -461,6 +516,10 @@ html * {
   background: #e57f39; /* Two */
   border: 2px solid #bf5f17; /* One */
 }
+#cat_list #Party.category-list-item:before {
+  background: #e57f39; /* Two */
+  border: 1px solid #bf5f17; /* One */
+}
 /*Building: One a0180e, Two d62618, Three fc4032*/
 #card.Building {
   border-color: #a0180e; /* One */
@@ -487,6 +546,10 @@ html * {
 .col-xs-1.Building {
   background: #d62618; /* Two */
   border: 2px solid #a0180e; /* One */
+}
+#cat_list #Building.category-list-item:before {
+  background: #d62618; /* Two */
+  border: 1px solid #a0180e; /* One */
 }
 /*Cooperative: One 00a098, Two 00ccc2, Three 00eae9*/
 #card.Cooperative {
@@ -515,6 +578,10 @@ html * {
   background: #00ccc2; /* Two */
   border: 2px solid #00a098; /* One */
 }
+#cat_list #Cooperative.category-list-item:before {
+  background: #00ccc2; /* Two */
+  border: 1px solid #00a098; /* One */
+}
 /*Adventure: One 30890b, Two 5fc11f, Three 5be828*/
 #card.Adventure {
   border-color: #30890b; /* One */
@@ -541,6 +608,10 @@ html * {
 .col-xs-1.Adventure {
   background: #5fc11f; /* Two */
   border: 2px solid #30890b; /* One */
+}
+#cat_list #Adventure.category-list-item:before {
+  background: #5fc11f; /* Two */
+  border: 1px solid #30890b; /* One */
 }
 /*Tile: One ad4966, Two ce6180, Three e585a5*/
 #card.Tile {
@@ -569,6 +640,10 @@ html * {
   background: #ce6180; /* Two */
   border: 2px solid #ad4966; /* One */
 }
+#cat_list #Tile.category-list-item:before {
+  background: #ce6180; /* Two */
+  border: 1px solid #ad4966; /* One */
+}
 /*Battle: One 2b247f, Two 5f4fb9, Three 8d77f2*/
 #card.Battle {
   border-color: #2b247f; /* One */
@@ -595,6 +670,10 @@ html * {
 .col-xs-1.Battle {
   background: #5f4fb9; /* Two */
   border: 2px solid #2b247f; /* One */
+}
+#cat_list #Battle.category-list-item:before {
+  background: #5f4fb9; /* Two */
+  border: 1px solid #2b247f; /* One */
 }
 /*Deduction: One 889b00, Two afc100, Three d3e900*/
 #card.Deduction {
@@ -623,6 +702,10 @@ html * {
   background: #afc100; /* Two */
   border: 2px solid #889b00; /* One */
 }
+#cat_list #Deduction.category-list-item:before {
+  background: #afc100; /* Two */
+  border: 1px solid #889b00; /* One */
+}
 /*Racing: One b27b00, Two e29c00, Three ffc200*/
 #card.Racing {
   border-color: #b27b00; /* One */
@@ -649,6 +732,10 @@ html * {
 .col-xs-1.Racing {
   background: #e29c00; /* Two */
   border: 2px solid #b27b00; /* One */
+}
+#cat_list #Racing.category-list-item:before {
+  background: #e29c00; /* Two */
+  border: 1px solid #b27b00; /* One */
 }
 /*Card: One bf2821, Two dd3b33, Three f05448*/
 #card.Card {
@@ -677,6 +764,10 @@ html * {
   background: #dd3b33; /* Two */
   border: 2px solid #bf2821; /* One */
 }
+#cat_list #Card.category-list-item:before {
+  background: #dd3b33; /* Two */
+  border: 1px solid #bf2821; /* One */
+}
 /*Dice: One 265996, Two 2979ed, Three 4599f4*/
 #card.Dice {
   border-color: #265996; /* One */
@@ -703,4 +794,8 @@ html * {
 .col-xs-1.Dice {
   background: #2979ed; /* Two */
   border: 2px solid #265996; /* One */
+}
+#cat_list #Dice.category-list-item:before {
+  background: #2979ed; /* Two */
+  border: 1px solid #265996; /* One */
 }

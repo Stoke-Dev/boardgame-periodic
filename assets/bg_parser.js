@@ -29,11 +29,14 @@ $("document").ready(function(){
             $("#cat_list").html("")
 
             $.each(category_list, function(key, val){
-                $("#cat_list").append(val + "<br>");
+                var $cat_item = $("<div>", {id: val, "class": "category-list-item"}).html(val);
+                $cat_item.mouseenter(function(){
+                    $("."+val).addClass("cat-highlight");
+                }).mouseleave(function(){
+                    $("."+val).removeClass("cat-highlight");
+                });
+                $("#cat_list").append($cat_item);
             });
-
-            
-
 
 
             console.log("Finished");
@@ -50,8 +53,6 @@ $("document").ready(function(){
 var openPanel = function(id) {
 
     $(".bg_popup_container").show();
-
-    //$("body").append('<div class="bg_popup_container"><div class="bg_popup">' + getData(id) + '</div></div>');
 
     console.log(db[id]);
 
