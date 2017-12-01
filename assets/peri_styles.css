@@ -18,14 +18,27 @@ body {
   width: 5.555556%;
   height: 60px;
   float: left;
-  padding: 7px 0px;
+  padding: 11px 0px;
   box-sizing: border-box;
   border: 2px solid black;
+  font-family: 'Oswald', sans-serif;
   overflow: hidden;
-  font-size: 11px;
+  font-size: 20px;
+  letter-spacing: 1px;
   text-align: center;
   cursor: pointer;
   color: white;
+  position: relative;
+}
+
+.col-xs-1:before {
+  content: attr(data-csscontent);
+  display: block;
+  position: absolute;
+  font-size: 50%;
+  top: 0;
+  left: 0;
+  padding: 1px 4px;
 }
 
 .col-xs-1.off {
@@ -34,7 +47,8 @@ body {
 }
 
 .col-xs-1.cat-highlight {
-  color:black;
+  color: black;
+  border-color: #444 !important;
 }
 
 .container {
@@ -204,6 +218,7 @@ body {
   background: white;
   border-radius: 0 0 13px 13px;
   padding: 10px;
+  position: relative;
 }
 
 #card .content .main {
@@ -229,6 +244,21 @@ body {
   float: right;
   position: relative;
   width: 50%;
+}
+
+#card .content .main #affiliate, #card .content .main #affiliate * {
+  text-align: left;
+  font-family: "Montserrat";
+  font-size: 20px;
+  padding-top:11px;
+  text-decoration: none;
+}
+#card .content .main #affiliate:after {
+  content: "»";
+  padding-left: 7px;
+}
+#card .content .main #affiliate:hover * {
+  text-decoration: underline;
 }
 
 #card .content .main #description {
@@ -299,14 +329,14 @@ body {
 }
 
 #card .content .details #data_fields {
-  width: 100%;
   margin: 30px;
+  position: relative;
 }
 
 #card .content .details #data_fields div{
   display: inline-block;
-  width: 21%;
-  font-size: 86px;
+  width: 22%;
+  font-size: 75px;
   color: #ccc;
   line-height: 62px;
 }
@@ -331,11 +361,57 @@ body {
   text-align: right;
 }
 
-#card .content .details #data_fields #affiliate {
-  margin-left: 60px;
+#card .content .details #data_fields #amazon {
+  background-color: #333;
+  position: absolute;
+  display: block;
+  bottom: -15px;
+  right: 0;
   width: 25%;
-  text-align: left;
-  line-height: 10px;
+  height: 140px;
+  border-radius: 25px;
+  line-height: 0;
+  font-size: 1rem;
+  padding:15px 20px;
+  text-transform: none;
+}
+
+#card .content .details #data_fields #amazon .az-heading {
+  font-size: 100%;
+  width: 100%;
+  line-height: initial;
+  color: rgba(255,255,255,.5);
+}
+
+#card .content .details #data_fields #amazon #az_stars {
+  font-size: 100%;
+  width: 100%;
+  line-height: initial;
+  color: white;
+  margin: 8px 0;
+}
+
+#card .content .details #data_fields #amazon #az_regPrice {
+  font-size: 100%;
+  width: 100%;
+  line-height: initial;
+  color: white;
+}
+#card .content .details #data_fields #amazon #az_regPrice:before {
+  content: "Reg. ";
+  text-transform: none;
+}
+
+#card .content .details #data_fields #amazon #az_nowPrice {
+  font-size: 150%;
+  width: 100%;
+  line-height: initial;
+  color: white;
+}
+#card .content .details #data_fields #amazon #az_nowPrice:before {
+  content: "Now: ";
+  font-size: 70%;
+  text-transform: none;
 }
 
 
@@ -396,6 +472,12 @@ body {
   background: #930965; /* Two */
   border: 1px solid #540436; /* One */
 }
+#card.Word .content .main #affiliate, #card.Word .content .main #affiliate * {
+  color: #540436;
+}
+#card.Word .content .details #data_fields #amazon {
+  background-color: #540436;
+}
 /*Dexterity: One 00515e, Two 007e93, Three 00a1bc*/
 #card.Dexterity {
   border-color: #00515e; /* One */
@@ -426,6 +508,12 @@ body {
 #cat_list #Dexterity.category-list-item:before {
   background: #007e93; /* Two */
   border: 1px solid #00515e; /* One */
+}
+#card.Dexterity .content .main #affiliate, #card.Dexterity .content .main #affiliate * {
+  color: #00515e;
+}
+#card.Dexterity .content .details #data_fields #amazon {
+  background-color: #00515e;
 }
 /*Economic: One 006630, Two 009e5a, Three 00d293*/
 #card.Economic {
@@ -458,6 +546,12 @@ body {
   background: #009e5a; /* Two */
   border: 1px solid #006630; /* One */
 }
+#card.Economic .content .main #affiliate, #card.Economic .content .main #affiliate * {
+  color: #006630;
+}
+#card.Economic .content .details #data_fields #amazon {
+  background-color: #006630;
+}
 /*Abstract: One bf9740, Two e0ba4f, Three f9e252*/
 #card.Abstract {
   border-color: #bf9740; /* One */
@@ -488,6 +582,12 @@ body {
 #cat_list #Abstract.category-list-item:before {
   background: #e0ba4f; /* Two */
   border: 1px solid #bf9740; /* One */
+}
+#card.Abstract .content .main #affiliate, #card.Abstract .content .main #affiliate * {
+  color: #bf9740;
+}
+#card.Abstract .content .details #data_fields #amazon {
+  background-color: #bf9740;
 }
 /*Party: One bf5f17, Two e57f39, Three ff9f50*/
 #card.Party {
@@ -520,6 +620,12 @@ body {
   background: #e57f39; /* Two */
   border: 1px solid #bf5f17; /* One */
 }
+#card.Party .content .main #affiliate, #card.Party .content .main #affiliate * {
+  color: #bf5f17;
+}
+#card.Party .content .details #data_fields #amazon {
+  background-color: #bf5f17;
+}
 /*Building: One a0180e, Two d62618, Three fc4032*/
 #card.Building {
   border-color: #a0180e; /* One */
@@ -550,6 +656,12 @@ body {
 #cat_list #Building.category-list-item:before {
   background: #d62618; /* Two */
   border: 1px solid #a0180e; /* One */
+}
+#card.Building .content .main #affiliate, #card.Building .content .main #affiliate * {
+  color: #a0180e;
+}
+#card.Building .content .details #data_fields #amazon {
+  background-color: #a0180e;
 }
 /*Cooperative: One 00a098, Two 00ccc2, Three 00eae9*/
 #card.Cooperative {
@@ -582,6 +694,12 @@ body {
   background: #00ccc2; /* Two */
   border: 1px solid #00a098; /* One */
 }
+#card.Cooperative .content .main #affiliate, #card.Cooperative .content .main #affiliate * {
+  color: #00a098;
+}
+#card.Cooperative .content .details #data_fields #amazon {
+  background-color: #00a098;
+}
 /*Adventure: One 30890b, Two 5fc11f, Three 5be828*/
 #card.Adventure {
   border-color: #30890b; /* One */
@@ -612,6 +730,12 @@ body {
 #cat_list #Adventure.category-list-item:before {
   background: #5fc11f; /* Two */
   border: 1px solid #30890b; /* One */
+}
+#card.Adventure .content .main #affiliate, #card.Adventure .content .main #affiliate * {
+  color: #30890b;
+}
+#card.Adventure .content .details #data_fields #amazon {
+  background-color: #30890b;
 }
 /*Tile: One ad4966, Two ce6180, Three e585a5*/
 #card.Tile {
@@ -644,6 +768,12 @@ body {
   background: #ce6180; /* Two */
   border: 1px solid #ad4966; /* One */
 }
+#card.Tile .content .main #affiliate, #card.Tile .content .main #affiliate * {
+  color: #ad4966;
+}
+#card.Tile .content .details #data_fields #amazon {
+  background-color: #ad4966;
+}
 /*Battle: One 2b247f, Two 5f4fb9, Three 8d77f2*/
 #card.Battle {
   border-color: #2b247f; /* One */
@@ -674,6 +804,12 @@ body {
 #cat_list #Battle.category-list-item:before {
   background: #5f4fb9; /* Two */
   border: 1px solid #2b247f; /* One */
+}
+#card.Battle .content .main #affiliate, #card.Battle .content .main #affiliate * {
+  color: #2b247f;
+}
+#card.Battle .content .details #data_fields #amazon {
+  background-color: #2b247f;
 }
 /*Deduction: One 889b00, Two afc100, Three d3e900*/
 #card.Deduction {
@@ -706,6 +842,12 @@ body {
   background: #afc100; /* Two */
   border: 1px solid #889b00; /* One */
 }
+#card.Deduction .content .main #affiliate, #card.Deduction .content .main #affiliate * {
+  color: #889b00;
+}
+#card.Deduction .content .details #data_fields #amazon {
+  background-color: #889b00;
+}
 /*Racing: One b27b00, Two e29c00, Three ffc200*/
 #card.Racing {
   border-color: #b27b00; /* One */
@@ -736,6 +878,12 @@ body {
 #cat_list #Racing.category-list-item:before {
   background: #e29c00; /* Two */
   border: 1px solid #b27b00; /* One */
+}
+#card.Racing .content .main #affiliate, #card.Racing .content .main #affiliate * {
+  color: #b27b00;
+}
+#card.Racing .content .details #data_fields #amazon {
+  background-color: #b27b00;
 }
 /*Card: One bf2821, Two dd3b33, Three f05448*/
 #card.Card {
@@ -768,6 +916,12 @@ body {
   background: #dd3b33; /* Two */
   border: 1px solid #bf2821; /* One */
 }
+#card.Card .content .main #affiliate, #card.Card .content .main #affiliate * {
+  color: #bf2821;
+}
+#card.Card .content .details #data_fields #amazon {
+  background-color: #bf2821;
+}
 /*Dice: One 265996, Two 2979ed, Three 4599f4*/
 #card.Dice {
   border-color: #265996; /* One */
@@ -799,3 +953,10 @@ body {
   background: #2979ed; /* Two */
   border: 1px solid #265996; /* One */
 }
+#card.Dice .content .main #affiliate, #card.Dice .content .main #affiliate * {
+  color: #265996;
+}
+#card.Dice .content .details #data_fields #amazon {
+  background-color: #265996;
+}
+

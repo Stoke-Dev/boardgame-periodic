@@ -20,6 +20,8 @@
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/papaparse/papaparse.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/bg_parser.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald:500" rel="stylesheet">
+<link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/peri_styles.css">
 <div id="CSV_LINK"><?php echo get_stylesheet_directory_uri(); ?>/assets/bgtable.csv</div>
 <div class="container">
@@ -211,12 +213,19 @@
                     <div id="description">
                         [Description]
                     </div>
+                    <div id="affiliate">[Rev]</div>
                 </div>
             </div>
             <div class="details">
-                <header><div class="left"><div class="time">Time</div> <div class="player">Players</div> <div class="ages">Ages</div></div> <div class="right">Full Review</div></header>
+                <header><div class="left"><div class="time">Time</div> <div class="player">Players</div> <div class="ages">Ages</div></div> <!-- <div class="right">Full Review</div> --></header>
                 <div id="data_fields">
-                    <div id="play_time">[00]<span>minutes</span></div><div id="players">[0-0]</div><div id="ages">[00+]</div><div id="affiliate">[Rev]</div>
+                    <div id="play_time">[00]<span>minutes</span></div><div id="players">[0-0]</div><div id="ages">[00+]</div>
+                    <a target="_blank" href="#" id="amazon">
+                        <div class="az-heading">Buy on Amazon</div>
+                        <div id="az_stars">[Loading Rating]</div>
+                        <div id="az_regPrice">[Loading Price]</div>
+                        <div id="az_nowPrice">[Loading Price]</div>
+                    </a>
                 </div>
             </div>
         </div>

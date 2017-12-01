@@ -17,6 +17,8 @@ $("document").ready(function(){
                 $("#s" + val.Spot).html(val.Abbreviation).addClass(val.Category).click(function(){
                     openPanel(val.Spot);
                 });
+
+                $("#s" + val.Spot).attr('data-csscontent', val.Spot);
             });
 
             var category_list = [];
@@ -64,8 +66,39 @@ var openPanel = function(id) {
     $("#play_time").html(db[id].Time + "<span>minutes</span>");
     $("#players").html(db[id].Players);
     $("#ages").html(db[id].Age);
-    $("#affiliate").html("<a style='font-size: 34%;' target='_blank' href='"+((db[id].Review_Link != '')?db[id].Review_Link:"#")+"'>[Review Link]</a>");
+    if (db[id].Review_Link != "") {
+        $("#affiliate").show()
+        $("#affiliate").html("<a style=target='_blank' href='"+((db[id].Review_Link != '')?db[id].Review_Link:"#")+"'>Read Full Review</a>");
+    } else {
+        $("#affiliate").hide()
+    }
     $("#featured_image img").attr("src", "assets/img/"+db[id].Img_name);
+    $("#az_regPrice").html(db[id].List_Price);
+    $("#az_nowPrice").html(db[id].Amazon_Price);
+    $("#amazon").attr('href',db[id].Amazon_Link);
+
+
+    var solidStar = '<i class="fa fa-star" aria-hidden="true"></i>'
+    var halfStar = '<i class="fa fa-star-half-o" aria-hidden="true"></i>'
+    var antiStar = '<i class="fa fa-star-o" aria-hidden="true"></i>'
+
+    var maxStars = 5
+    var rateLeft = db[id].Amazon_Rating;
+    var ratingOutStr = "";
+
+    for (var i = maxStars - 1; i >= 0; i--) {
+        if (rateLeft >= 1) {
+            ratingOutStr += solidStar;
+        } else if (rateLeft > 0) {
+            ratingOutStr += halfStar;
+        } else {
+            ratingOutStr += antiStar;
+        }
+        rateLeft--;
+    }
+
+    $("#az_stars").html(ratingOutStr);
+
 
     setTimeout(function(){
         $(".bg_popup_container").addClass("ready");
