@@ -552,25 +552,25 @@ body {
 #card.Economic .content .details #data_fields #amazon {
   background-color: #006630;
 }
-/*Abstract: One bf9740, Two e0ba4f, Three f9e252*/
+/*Abstract: One bf9740, Two e0ba4f, Three e4cf4b*/
 #card.Abstract {
   border-color: #bf9740; /* One */
-  background-color: #f9e252; /* Three */
+  background-color: #e4cf4b; /* Three */
 }
 #card.Abstract:after {
   border-color: #e0ba4f; /* Two */
 }
 #card.Abstract .content .main #description span {
-  color: #f9e252; /* Three */
+  color: #e4cf4b; /* Three */
 }
 #card.Abstract .content .details .right {
-  background: #f9e252; /* Three */
+  background: #e4cf4b; /* Three */
 }
 #card.Abstract .content .details .left {
-  background: #f9e252; /* Three */
+  background: #e4cf4b; /* Three */
 }
 #card.Abstract .content .details #data_fields div{
-  color: #f9e252; /* Three */
+  color: #e4cf4b; /* Three */
 }
 #card.Abstract .icon svg .cls-1{
   fill: #e0ba4f; /* Two */
@@ -811,25 +811,25 @@ body {
 #card.Battle .content .details #data_fields #amazon {
   background-color: #2b247f;
 }
-/*Deduction: One 889b00, Two afc100, Three d3e900*/
+/*Deduction: One 889b00, Two afc100, Three c5d900*/
 #card.Deduction {
   border-color: #889b00; /* One */
-  background-color: #d3e900; /* Three */
+  background-color: #c5d900; /* Three */
 }
 #card.Deduction:after {
   border-color: #afc100; /* Two */
 }
 #card.Deduction .content .main #description span {
-  color: #d3e900; /* Three */
+  color: #c5d900; /* Three */
 }
 #card.Deduction .content .details .right {
-  background: #d3e900; /* Three */
+  background: #c5d900; /* Three */
 }
 #card.Deduction .content .details .left {
-  background: #d3e900; /* Three */
+  background: #c5d900; /* Three */
 }
 #card.Deduction .content .details #data_fields div{
-  color: #d3e900; /* Three */
+  color: #c5d900; /* Three */
 }
 #card.Deduction .icon svg .cls-1{
   fill: #afc100; /* Two */

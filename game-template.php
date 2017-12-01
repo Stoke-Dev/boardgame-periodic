@@ -23,7 +23,11 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald:500" rel="stylesheet">
 <link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/peri_styles.css">
-<div id="CSV_LINK"><?php echo get_stylesheet_directory_uri(); ?>/assets/bgtable.csv</div>
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+<div id="CSV_LINK"><?php the_content();?></div>
+<?php endwhile; endif; ?>
+
 <div class="container">
 <div class="row">
 <div id="s1" class="col-xs-1">a</div>

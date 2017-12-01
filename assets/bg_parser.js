@@ -4,7 +4,7 @@ $("document").ready(function(){
     // $("body").append('<link rel="stylesheet" type="text/css" href="assets/peri_styles.css">');
     // $(".bg_popup_container").hide();
 
-    var dataURL = $("#CSV_LINK").html();
+    var dataURL = $("#CSV_LINK").html().replace(/<(?:.|\n)*?>/gm, '');
     $("#CSV_LINK").remove();
 
     Papa.parse(dataURL, {
