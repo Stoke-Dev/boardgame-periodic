@@ -16,7 +16,16 @@ $("document").ready(function(){
 
                 $("#s" + val.Spot).html(val.Abbreviation).addClass(val.Category).click(function(){
                     openPanel(val.Spot);
+                }).append("<div class='thumb-image'></div>");
+
+                $("#s" + val.Spot + " .thumb-image").css({
+                    "background-image": "url(assets/img/"+val.Img_name+")", 
+                    "animation-delay": (1.5 + val.Spot/50.0)+"s",
                 });
+
+                let color = $("#s" + val.Spot).css("background-color").split("(")[1].replace(')','').split(",").map((x)=>{return parseInt(x)});
+
+                $("#s" + val.Spot).css("background-color", 'rgba(' + color[0] + ',' + color[1] + ',' + color[2] +', 0.8)');
 
                 $("#s" + val.Spot).attr('data-csscontent', val.Spot);
             });

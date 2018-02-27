@@ -14,6 +14,165 @@ body {
   margin: 0;
 }
 
+.hero-title {
+  position: relative;
+  display: block;
+  margin: 30px auto 70px;
+  max-width: 1150px;
+}
+
+.hero-title h1 {
+  position: relative;
+  background-color: #6452B1;
+  margin: 0 92px;
+  padding: 5px 20px;
+  border: 6px solid #322879;
+  font-size: 220%;
+  letter-spacing: 3px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.hero-title h1:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 39px;
+  transform: rotate(-63deg);
+  border-radius: 99px;
+  background: #322879;
+  bottom: -32px;
+  left: 9px;
+}
+
+.hero-title h1:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 39px;
+  transform: rotate(63deg);
+  border-radius: 99px;
+  background: #322879;
+  bottom: -32px;
+  right: 9px;
+}
+
+.hero-title .left-flap, .hero-title .right-flap {
+  position: absolute;
+  z-index: -1;
+  width: 100px;
+  height: 100%;
+  top: 20px;
+  background-color: #6452B1;
+  border: 6px solid #322879;
+}
+
+.hero-title .left-flap {
+   margin-left: 30px;
+}
+
+.hero-title .right-flap {
+  right: 0;
+  margin-right: 30px;
+}
+
+.hero-title .left-flap:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  display: inline-block;
+  border: 32px solid transparent;
+  border-left: 20px solid white;
+  border-right: none;
+  width: 0;
+  height: 0;
+}
+
+.hero-title .left-flap:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 0;
+  display: inline-block;
+  border: 32px solid transparent;
+  border-left: 20px solid #322879;
+  border-right: none;
+  width: 0;
+  height: 0;
+}
+
+.hero-title .right-flap:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: inline-block;
+  border: 32px solid transparent;
+  border-right: 20px solid white;
+  border-left: none;
+  width: 0;
+  height: 0;
+}
+
+.hero-title .right-flap:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 0;
+  display: inline-block;
+  border: 32px solid transparent;
+  border-right: 20px solid #322879;
+  border-left: none;
+  width: 0;
+  height: 0;
+}
+
+.tut-info {
+  position: relative;
+  max-width: 1150px;
+  margin: auto;
+  padding: 33px 300px;
+  color: #CC4B3D;
+  letter-spacing: .3px;
+  line-height: 150%;
+  font-size: 110%;
+  opacity: 0;
+  animation: fade-in 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.tut-info:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 15px;
+  margin-left: -36px;
+  width: 22px;
+  height: 28px;
+  border-bottom: 5px solid #CC4B3D;
+  border-left: 5px solid #CC4B3D;
+  border-radius: 0 0 0 22px;
+}
+
+.tut-info:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 12px;
+  margin-left: -43px;
+  width: 14px;
+  height: 14px;
+  border-top: 5px solid #CC4B3D;
+  border-left: 5px solid #CC4B3D;
+  transform: rotate(45deg);
+}
+
 .col-xs-1 {
   width: 5.555556%;
   height: 60px;
@@ -29,6 +188,28 @@ body {
   cursor: pointer;
   color: white;
   position: relative;
+}
+
+.col-xs-1 .thumb-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-size: cover;
+  opacity: 0;
+  animation: fade-in 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .col-xs-1:before {
@@ -53,7 +234,7 @@ body {
 
 .container {
   position: relative;
-  overflow: hidden;
+  /*overflow: hidden;*/
   max-width: 1150px;
   margin: auto;
 }
@@ -97,7 +278,7 @@ body {
 
 #card {
   position: relative;
-  background: #ccc;
+  background-color: #ccc;
   padding: 10px 20px 20px 20px;
   border: 10px solid #666;
   border-radius: 40px;
@@ -292,7 +473,7 @@ body {
 }
 
 #card .content .details .left{
-  background: #ccc;
+  background-color: #ccc;
   border-radius: 99px;
   padding: 5px;
   float: left;
@@ -319,7 +500,7 @@ body {
 }
 
 #card .content .details .right{
-  background: #ccc;
+  background-color: #ccc;
   border-radius: 99px;
   text-align: center;
   float: right;
@@ -417,13 +598,24 @@ body {
 
 
 #cat_container {
+  position: absolute;
   display: block;
-  width: 800px;
+  width: 700px;
   margin: auto;
+  padding-right: 280px;
+  bottom: 270px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  animation: fade-in 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
 }
 
 #cat_list .category-list-item {
   cursor: default;
+  width: 140px;
+  padding: 5px 0;
   display: inline-block;
 }
 
@@ -433,7 +625,7 @@ body {
   width: 15px;
   height: 15px;
   margin: 0 5px 0 15px;
-  background: #efefef;
+  background-color: #efefef;
 }
 
 
@@ -453,10 +645,10 @@ body {
   color: #bc3181; /* Three */
 }
 #card.Word .content .details .right {
-  background: #bc3181; /* Three */
+  background-color: #bc3181; /* Three */
 }
 #card.Word .content .details .left {
-  background: #bc3181; /* Three */
+  background-color: #bc3181; /* Three */
 }
 #card.Word .content .details #data_fields div{
   color: #bc3181; /* Three */
@@ -465,11 +657,11 @@ body {
   fill: #930965; /* Two */
 }
 .col-xs-1.Word {
-  background: #930965; /* Two */
+  background-color: #930965; /* Two */
   border: 2px solid #540436; /* One */
 }
 #cat_list #Word.category-list-item:before {
-  background: #930965; /* Two */
+  background-color: #930965; /* Two */
   border: 1px solid #540436; /* One */
 }
 #card.Word .content .main #affiliate, #card.Word .content .main #affiliate * {
@@ -490,10 +682,10 @@ body {
   color: #00a1bc; /* Three */
 }
 #card.Dexterity .content .details .right {
-  background: #00a1bc; /* Three */
+  background-color: #00a1bc; /* Three */
 }
 #card.Dexterity .content .details .left {
-  background: #00a1bc; /* Three */
+  background-color: #00a1bc; /* Three */
 }
 #card.Dexterity .content .details #data_fields div{
   color: #00a1bc; /* Three */
@@ -502,11 +694,11 @@ body {
   fill: #007e93; /* Two */
 }
 .col-xs-1.Dexterity {
-  background: #007e93; /* Two */
+  background-color: #007e93; /* Two */
   border: 2px solid #00515e; /* One */
 }
 #cat_list #Dexterity.category-list-item:before {
-  background: #007e93; /* Two */
+  background-color: #007e93; /* Two */
   border: 1px solid #00515e; /* One */
 }
 #card.Dexterity .content .main #affiliate, #card.Dexterity .content .main #affiliate * {
@@ -527,10 +719,10 @@ body {
   color: #00d293; /* Three */
 }
 #card.Economic .content .details .right {
-  background: #00d293; /* Three */
+  background-color: #00d293; /* Three */
 }
 #card.Economic .content .details .left {
-  background: #00d293; /* Three */
+  background-color: #00d293; /* Three */
 }
 #card.Economic .content .details #data_fields div{
   color: #00d293; /* Three */
@@ -539,11 +731,11 @@ body {
   fill: #009e5a; /* Two */
 }
 .col-xs-1.Economic {
-  background: #009e5a; /* Two */
+  background-color: #009e5a; /* Two */
   border: 2px solid #006630; /* One */
 }
 #cat_list #Economic.category-list-item:before {
-  background: #009e5a; /* Two */
+  background-color: #009e5a; /* Two */
   border: 1px solid #006630; /* One */
 }
 #card.Economic .content .main #affiliate, #card.Economic .content .main #affiliate * {
@@ -564,10 +756,10 @@ body {
   color: #e4cf4b; /* Three */
 }
 #card.Abstract .content .details .right {
-  background: #e4cf4b; /* Three */
+  background-color: #e4cf4b; /* Three */
 }
 #card.Abstract .content .details .left {
-  background: #e4cf4b; /* Three */
+  background-color: #e4cf4b; /* Three */
 }
 #card.Abstract .content .details #data_fields div{
   color: #e4cf4b; /* Three */
@@ -576,11 +768,11 @@ body {
   fill: #e0ba4f; /* Two */
 }
 .col-xs-1.Abstract {
-  background: #e0ba4f; /* Two */
+  background-color: #e0ba4f; /* Two */
   border: 2px solid #bf9740; /* One */
 }
 #cat_list #Abstract.category-list-item:before {
-  background: #e0ba4f; /* Two */
+  background-color: #e0ba4f; /* Two */
   border: 1px solid #bf9740; /* One */
 }
 #card.Abstract .content .main #affiliate, #card.Abstract .content .main #affiliate * {
@@ -601,10 +793,10 @@ body {
   color: #ff9f50; /* Three */
 }
 #card.Party .content .details .right {
-  background: #ff9f50; /* Three */
+  background-color: #ff9f50; /* Three */
 }
 #card.Party .content .details .left {
-  background: #ff9f50; /* Three */
+  background-color: #ff9f50; /* Three */
 }
 #card.Party .content .details #data_fields div{
   color: #ff9f50; /* Three */
@@ -613,11 +805,11 @@ body {
   fill: #e57f39; /* Two */
 }
 .col-xs-1.Party {
-  background: #e57f39; /* Two */
+  background-color: #e57f39; /* Two */
   border: 2px solid #bf5f17; /* One */
 }
 #cat_list #Party.category-list-item:before {
-  background: #e57f39; /* Two */
+  background-color: #e57f39; /* Two */
   border: 1px solid #bf5f17; /* One */
 }
 #card.Party .content .main #affiliate, #card.Party .content .main #affiliate * {
@@ -638,10 +830,10 @@ body {
   color: #fc4032; /* Three */
 }
 #card.Building .content .details .right {
-  background: #fc4032; /* Three */
+  background-color: #fc4032; /* Three */
 }
 #card.Building .content .details .left {
-  background: #fc4032; /* Three */
+  background-color: #fc4032; /* Three */
 }
 #card.Building .content .details #data_fields div{
   color: #fc4032; /* Three */
@@ -650,11 +842,11 @@ body {
   fill: #d62618; /* Two */
 }
 .col-xs-1.Building {
-  background: #d62618; /* Two */
+  background-color: #d62618; /* Two */
   border: 2px solid #a0180e; /* One */
 }
 #cat_list #Building.category-list-item:before {
-  background: #d62618; /* Two */
+  background-color: #d62618; /* Two */
   border: 1px solid #a0180e; /* One */
 }
 #card.Building .content .main #affiliate, #card.Building .content .main #affiliate * {
@@ -675,10 +867,10 @@ body {
   color: #00eae9; /* Three */
 }
 #card.Cooperative .content .details .right {
-  background: #00eae9; /* Three */
+  background-color: #00eae9; /* Three */
 }
 #card.Cooperative .content .details .left {
-  background: #00eae9; /* Three */
+  background-color: #00eae9; /* Three */
 }
 #card.Cooperative .content .details #data_fields div{
   color: #00eae9; /* Three */
@@ -687,11 +879,11 @@ body {
   fill: #00ccc2; /* Two */
 }
 .col-xs-1.Cooperative {
-  background: #00ccc2; /* Two */
+  background-color: #00ccc2; /* Two */
   border: 2px solid #00a098; /* One */
 }
 #cat_list #Cooperative.category-list-item:before {
-  background: #00ccc2; /* Two */
+  background-color: #00ccc2; /* Two */
   border: 1px solid #00a098; /* One */
 }
 #card.Cooperative .content .main #affiliate, #card.Cooperative .content .main #affiliate * {
@@ -712,10 +904,10 @@ body {
   color: #5be828; /* Three */
 }
 #card.Adventure .content .details .right {
-  background: #5be828; /* Three */
+  background-color: #5be828; /* Three */
 }
 #card.Adventure .content .details .left {
-  background: #5be828; /* Three */
+  background-color: #5be828; /* Three */
 }
 #card.Adventure .content .details #data_fields div{
   color: #5be828; /* Three */
@@ -724,11 +916,11 @@ body {
   fill: #5fc11f; /* Two */
 }
 .col-xs-1.Adventure {
-  background: #5fc11f; /* Two */
+  background-color: #5fc11f; /* Two */
   border: 2px solid #30890b; /* One */
 }
 #cat_list #Adventure.category-list-item:before {
-  background: #5fc11f; /* Two */
+  background-color: #5fc11f; /* Two */
   border: 1px solid #30890b; /* One */
 }
 #card.Adventure .content .main #affiliate, #card.Adventure .content .main #affiliate * {
@@ -749,10 +941,10 @@ body {
   color: #e585a5; /* Three */
 }
 #card.Tile .content .details .right {
-  background: #e585a5; /* Three */
+  background-color: #e585a5; /* Three */
 }
 #card.Tile .content .details .left {
-  background: #e585a5; /* Three */
+  background-color: #e585a5; /* Three */
 }
 #card.Tile .content .details #data_fields div{
   color: #e585a5; /* Three */
@@ -761,11 +953,11 @@ body {
   fill: #ce6180; /* Two */
 }
 .col-xs-1.Tile {
-  background: #ce6180; /* Two */
+  background-color: #ce6180; /* Two */
   border: 2px solid #ad4966; /* One */
 }
 #cat_list #Tile.category-list-item:before {
-  background: #ce6180; /* Two */
+  background-color: #ce6180; /* Two */
   border: 1px solid #ad4966; /* One */
 }
 #card.Tile .content .main #affiliate, #card.Tile .content .main #affiliate * {
@@ -786,10 +978,10 @@ body {
   color: #8d77f2; /* Three */
 }
 #card.Battle .content .details .right {
-  background: #8d77f2; /* Three */
+  background-color: #8d77f2; /* Three */
 }
 #card.Battle .content .details .left {
-  background: #8d77f2; /* Three */
+  background-color: #8d77f2; /* Three */
 }
 #card.Battle .content .details #data_fields div{
   color: #8d77f2; /* Three */
@@ -798,11 +990,11 @@ body {
   fill: #5f4fb9; /* Two */
 }
 .col-xs-1.Battle {
-  background: #5f4fb9; /* Two */
+  background-color: #5f4fb9; /* Two */
   border: 2px solid #2b247f; /* One */
 }
 #cat_list #Battle.category-list-item:before {
-  background: #5f4fb9; /* Two */
+  background-color: #5f4fb9; /* Two */
   border: 1px solid #2b247f; /* One */
 }
 #card.Battle .content .main #affiliate, #card.Battle .content .main #affiliate * {
@@ -823,10 +1015,10 @@ body {
   color: #c5d900; /* Three */
 }
 #card.Deduction .content .details .right {
-  background: #c5d900; /* Three */
+  background-color: #c5d900; /* Three */
 }
 #card.Deduction .content .details .left {
-  background: #c5d900; /* Three */
+  background-color: #c5d900; /* Three */
 }
 #card.Deduction .content .details #data_fields div{
   color: #c5d900; /* Three */
@@ -835,11 +1027,11 @@ body {
   fill: #afc100; /* Two */
 }
 .col-xs-1.Deduction {
-  background: #afc100; /* Two */
+  background-color: #afc100; /* Two */
   border: 2px solid #889b00; /* One */
 }
 #cat_list #Deduction.category-list-item:before {
-  background: #afc100; /* Two */
+  background-color: #afc100; /* Two */
   border: 1px solid #889b00; /* One */
 }
 #card.Deduction .content .main #affiliate, #card.Deduction .content .main #affiliate * {
@@ -860,10 +1052,10 @@ body {
   color: #ffc200; /* Three */
 }
 #card.Racing .content .details .right {
-  background: #ffc200; /* Three */
+  background-color: #ffc200; /* Three */
 }
 #card.Racing .content .details .left {
-  background: #ffc200; /* Three */
+  background-color: #ffc200; /* Three */
 }
 #card.Racing .content .details #data_fields div{
   color: #ffc200; /* Three */
@@ -872,11 +1064,11 @@ body {
   fill: #e29c00; /* Two */
 }
 .col-xs-1.Racing {
-  background: #e29c00; /* Two */
+  background-color: #e29c00; /* Two */
   border: 2px solid #b27b00; /* One */
 }
 #cat_list #Racing.category-list-item:before {
-  background: #e29c00; /* Two */
+  background-color: #e29c00; /* Two */
   border: 1px solid #b27b00; /* One */
 }
 #card.Racing .content .main #affiliate, #card.Racing .content .main #affiliate * {
@@ -897,10 +1089,10 @@ body {
   color: #f05448; /* Three */
 }
 #card.Card .content .details .right {
-  background: #f05448; /* Three */
+  background-color: #f05448; /* Three */
 }
 #card.Card .content .details .left {
-  background: #f05448; /* Three */
+  background-color: #f05448; /* Three */
 }
 #card.Card .content .details #data_fields div{
   color: #f05448; /* Three */
@@ -909,11 +1101,11 @@ body {
   fill: #dd3b33; /* Two */
 }
 .col-xs-1.Card {
-  background: #dd3b33; /* Two */
+  background-color: #dd3b33; /* Two */
   border: 2px solid #bf2821; /* One */
 }
 #cat_list #Card.category-list-item:before {
-  background: #dd3b33; /* Two */
+  background-color: #dd3b33; /* Two */
   border: 1px solid #bf2821; /* One */
 }
 #card.Card .content .main #affiliate, #card.Card .content .main #affiliate * {
@@ -934,10 +1126,10 @@ body {
   color: #4599f4; /* Three */
 }
 #card.Dice .content .details .right {
-  background: #4599f4; /* Three */
+  background-color: #4599f4; /* Three */
 }
 #card.Dice .content .details .left {
-  background: #4599f4; /* Three */
+  background-color: #4599f4; /* Three */
 }
 #card.Dice .content .details #data_fields div{
   color: #4599f4; /* Three */
@@ -946,11 +1138,11 @@ body {
   fill: #2979ed; /* Two */
 }
 .col-xs-1.Dice {
-  background: #2979ed; /* Two */
+  background-color: #2979ed; /* Two */
   border: 2px solid #265996; /* One */
 }
 #cat_list #Dice.category-list-item:before {
-  background: #2979ed; /* Two */
+  background-color: #2979ed; /* Two */
   border: 1px solid #265996; /* One */
 }
 #card.Dice .content .main #affiliate, #card.Dice .content .main #affiliate * {

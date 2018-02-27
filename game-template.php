@@ -28,6 +28,13 @@
 <div id="CSV_LINK"><?php the_content();?></div>
 <?php endwhile; endif; ?>
 
+
+<div class="hero-title">
+    <div class="left-flap"></div>
+    <h1>Periodic Table of Board Games</h1>
+    <div class="right-flap"></div>
+</div>
+
 <div class="container">
 <div class="row">
 <div id="s1" class="col-xs-1">a</div>
@@ -169,16 +176,25 @@
 <div id="s83" class="col-xs-1">s</div>
 <div id="s90" class="col-xs-1">f</div>
 </div>
-</div>
 
-<br>
+
 
 <div id="cat_container">
-    <header>Categories:</header>
+    <!-- <header>Categories:</header> -->
     <div id="cat_list">
         [loading]
     </div>
 </div>
+
+</div>
+
+<div class="tut-info">
+Click Any Tile<br>to View Games    
+</div>
+
+
+
+
 
 
 
